@@ -17,7 +17,7 @@ function menu() {
     console.log("3 - Listar livro")
     console.log("0 - Sair")
 
-    const opcao = readline.question("Digite a opção: ")
+    const opcao = readline.questionInt("Digite a opção: ")
 
     if (opcao === 1) {
 
@@ -52,5 +52,71 @@ function cadastrarLivro() {
 
     conexao.query(inserir, [titulo, autor], function(erro){
         
+        if (erro) {
+
+            console.log("Erro ao cadastrar livro.")
+            console.log(erro)
+
+        }  else {
+
+            console.log("Livro cadastrado com sucesso.")
+            menu()
+        }
     })
 }
+
+function listarLivro() {
+    
+    const sql = "select titulo, autor from livros"
+
+    conexao.query(sql, function(erro, livros) {
+
+        if (erro) {
+
+            console.log("Erro ao listar livros.")
+            console.log(erro)
+
+        }  else {
+
+            console.log("\n --- LIVROS ---")
+            livros.forEach( function (livros) {
+                console.log(
+                    livros.titulo + " - " +
+                    livros.autor
+                )
+            })
+        }
+
+        menu()
+    })
+}
+
+function deletarLivro() {
+
+    const id = readline.question("Digite o ID do livro: ")
+
+    const deletar = "delete from livros where id = ?"
+
+    conexao.query(deletar, [id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao deletar livro.")
+            console.log(erro)
+
+        }  else if (resultado.affectedRows === 0 ) {
+
+            console.log("Produto não encontrado")
+
+        }   else {
+
+            console.log("Produto deletado com sucesso.")
+
+        }
+
+        menu()
+
+    })
+}
+
+menu()
