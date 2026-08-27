@@ -15,6 +15,7 @@ function menu() {
     console.log("1 - Cadastrar jogos")
     console.log("2 - Excluir jogos")
     console.log("3 - Listar jogos")
+    console.log("4 - Atualizar jogos")
     console.log("0 - Sair")
 
     const opcao = readline.questionInt("Digite a opção: ")
@@ -30,6 +31,10 @@ function menu() {
     } else if (opcao === 3) {
 
         listarJogo()
+    
+    } else if (opcao === 4) {
+
+        atualizarJogo()
 
     } else if (opcao === 0 ) {
 
@@ -118,6 +123,35 @@ function deletarJogo() {
         }
 
         menu()
+    })
+}
+
+function atualizarJogo() {
+
+    const nome = readline.question("Insira o nome do jogo: ")
+    const genero = readline.question("Insira o gênero do jogo: ")
+
+    const id = readline.question("Digite o ID do aluno: ")
+    
+    const update = "UPDATE jogos SET nome = ?, genero = ? WHERE id= ?"
+
+    conexao.query(update, [nome, genero, id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao atualizar jogo.")
+            console.log(erro)
+
+        } else if (resultado.affectedRows === 0) {
+
+            console.log("Jogo não encontrado.")
+
+        }  else {
+
+            console.log("Jogo atualizado com sucesso!")
+
+        }
+        conexao.end()
     })
 }
 

@@ -9,13 +9,14 @@ const conexao = mysql.createConnection ({
     database: "biblioteca_atv3"
 })
 
+// trocar funçoes
+
 function menu() {
 
     console.log("\n ===== MENU =====")
     console.log("1 - Cadastrar livro")
     console.log("2 - Excluir livro")
     console.log("3 - Listar livro")
-    console.log("4 - Atualizar livro")
     console.log("0 - Sair")
 
     const opcao = readline.questionInt("Digite a opção: ")
@@ -31,10 +32,6 @@ function menu() {
     } else if (opcao === 3) {
 
         listarLivro()
-    
-    } else if (opcao === 4) {
-
-        atualizarLivro()
 
     } else if (opcao === 0 ) {
 
@@ -111,45 +108,16 @@ function deletarLivro() {
 
         }  else if (resultado.affectedRows === 0 ) {
 
-            console.log("Livro não encontrado")
+            console.log("Produto não encontrado")
 
         }   else {
 
-            console.log("livro deletado com sucesso.")
+            console.log("Produto deletado com sucesso.")
 
         }
 
         menu()
 
-    })
-}
-
-function atualizarLivro() {
-
-    const titulo = readline.question("Digite o título do livro: ")
-    const autor = readline.question("Digite o autor do livro: ")
-
-    const id = readline.question("Digite o ID do aluno: ")
-    
-    const update = "UPDATE livros SET titulo = ?, autor = ?,  WHERE id= ?"
-
-    conexao.query(update, [titulo, autor, id], function(erro, resultado) {
-
-        if (erro) {
-
-            console.log("Erro ao atualizar livro.")
-            console.log(erro)
-
-        } else if (resultado.affectedRows === 0) {
-
-            console.log("Livro não encontrado.")
-
-        }  else {
-
-            console.log("Livro atualizado com sucesso!")
-
-        }
-        conexao.end()
     })
 }
 

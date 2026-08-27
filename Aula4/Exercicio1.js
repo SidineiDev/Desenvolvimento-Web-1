@@ -16,7 +16,6 @@ function menu() {
     console.log("1 - Cadastrar aluno")
     console.log("2 - Excluir aluno")
     console.log("3 - Listar aluno")
-    console.log("4 - Atualizar aluno")
     console.log("0 - Sair")
 
     const opcao = readline.questionInt("Escolha uma opção: ")
@@ -33,7 +32,7 @@ function menu() {
 
         listarAluno()
 
-    } else if (opcao === 4) {
+    } else if (opcao === 4 ) {
 
         atualizarAluno()
 
@@ -133,37 +132,10 @@ function listarAluno() {
 
 }
 
-function atualizarAluno() {
+atualizarAluno() {
 
-    const nome = readline.question("Digite o nome do aluno: ")
-    const email = readline.question("Digite o email do aluno: ")
-    const endereco = readline.question("Digite o endereço do aluno: ")
-    const matricula = readline.question("Digite a matrícula do aluno: ")
-    const curso = readline.question("Digite o curso do aluno: ")
-    const serie = readline.question("Digite a série do aluno: ")
-
-    const id = readline.question("Digite o ID do aluno: ")
-    
-    const update = "UPDATE alunos SET nome = ?, email = ?, endereco = ?, matricula = ?, curso = ?, serie = ? WHERE id= ?"
-
-    conexao.query(update, [nome, email, endereco, matricula, curso, serie, id], function(erro, resultado) {
-
-        if (erro) {
-
-            console.log("Erro ao atualizar alunos.")
-            console.log(erro)
-
-        } else if (resultado.affectedRows === 0) {
-
-            console.log("Aluno não encontrado.")
-
-        }  else {
-
-            console.log("Aluno atualizado com sucesso!")
-
-        }
-        conexao.end()
-    })
+    const 
 }
+
 
 menu()

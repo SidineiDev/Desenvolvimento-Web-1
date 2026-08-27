@@ -12,25 +12,30 @@ const conexao = mysql.createConnection({
 
 function menu() {
 
-    console.log("\n ===== MENU =====")
-    console.log("1 - Cadastrar produto")
-    console.log("2 - Excluir produto")
-    console.log("3 - Listar produto")
-    console.log("0 - Sair")
-    
-    const opcao = readline.questionInt("Escolha uma opção: ") 
+   console.log("\n ===== MENU =====")
+       console.log("1 - Cadastrar produto")
+       console.log("2 - Excluir produto")
+       console.log("3 - Listar produto")
+       console.log("4 - Atualizar produto")
+       console.log("0 - Sair")
+   
+       const opcao = readline.questionInt("Escolha uma opção: ")
+   
+       if (opcao === 1) {
+   
+           cadastrarProduto()
 
-    if (opcao === 1) {
-
-        cadastrarProduto()
-
-    } else if (opcao === 2 ) {
-
-        deletarProduto()
-
-    } else if (opcao === 3) {
-
-        listarProduto()
+       } else if (opcao === 2 ) {
+   
+           excluirProduto()
+   
+       } else if (opcao === 3) {
+   
+           listarProduto()
+   
+       } else if (opcao === 4) {
+   
+           atualizarProduto()
 
     } else if (opcao === 0 ) {
 
@@ -120,6 +125,36 @@ function deletarProduto() {
 
         menu()
 
+    })
+}
+
+function atualizarProduto() {
+
+    const nome = readline.question("Cadastrar nome do produto: ")
+    const preco = readline.questionFloat("Cadastrar preço do produto: ")
+    const quantidade = readline.question("Cadastrar quantidade em estoque: ")
+
+    const id = readline.question("Digite o ID do aluno: ")
+    
+    const update = "UPDATE alunos SET nome = ?, preco = ?, quantidade = ? WHERE id= ?"
+
+    conexao.query(update, [nome, preco, quantidade, id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao atualizar produto.")
+            console.log(erro)
+
+        } else if (resultado.affectedRows === 0) {
+
+            console.log("Produto não encontrado.")
+
+        }  else {
+
+            console.log("Produto atualizado com sucesso!")
+
+        }
+        conexao.end()
     })
 }
 

@@ -31,6 +31,10 @@ function menu() {
     
         listarCliente()
     
+    } else if (opcao === 3) {
+    
+        atualizarCliente()
+    
     } else if (opcao === 0 ) {
     
         console.log("Programa encerrado.")
@@ -41,6 +45,35 @@ function menu() {
         console.log("Opção inválida.")
         menu()
     }
+}
+
+function atualizarCliente() {
+
+    const nome = readline.question("Insira o nome: ")
+    const telefone = readline.question("Insira o telefone: ")
+  
+    const id = readline.question("Digite o ID do aluno: ")
+    
+    const update = "UPDATE clientes SET nome = ?, telefone = ? WHERE id= ?"
+
+    conexao.query(update, [nome, telefone, id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao atualizar cliente.")
+            console.log(erro)
+
+        } else if (resultado.affectedRows === 0) {
+
+            console.log("Cliente não encontrado.")
+
+        }  else {
+
+            console.log("cliente atualizado com sucesso!")
+
+        }
+        conexao.end()
+    })
 }
 
 function cadastrarCliente() {

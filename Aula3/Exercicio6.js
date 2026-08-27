@@ -15,6 +15,7 @@ function menu() {
     console.log("1 - Cadastrar filmes")
     console.log("2 - Excluir filmes")
     console.log("3 - Listar filmes")
+    console.log("4 - Atualizar filmes")
     console.log("0 - Sair")
     
     const opcao = readline.questionInt("Digite a opção: ")
@@ -30,6 +31,10 @@ function menu() {
     } else if (opcao === 3) {
     
         listarFilme()
+
+    } else if (opcao === 4) {
+    
+        atualizarFilme()
     
     } else if (opcao === 0 ) {
     
@@ -41,6 +46,35 @@ function menu() {
         console.log("Opção inválida.")
         menu()
     }
+}
+
+function atualizarFilme() {
+
+    const titulo = readline.question("Insira o título: ")
+    const ano = readline.question("Insira o ano: ")
+
+    const id = readline.question("Digite o ID do aluno: ")
+    
+    const update = "UPDATE filmes SET titulo = ? ano = ? WHERE id= ?"
+
+    conexao.query(update, [titulo, ano, id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao atualizar filme.")
+            console.log(erro)
+
+        } else if (resultado.affectedRows === 0) {
+
+            console.log("Filme não encontrado.")
+
+        }  else {
+
+            console.log("Filme atualizado com sucesso!")
+
+        }
+        conexao.end()
+    })
 }
 
 function cadastrarFilme() {
