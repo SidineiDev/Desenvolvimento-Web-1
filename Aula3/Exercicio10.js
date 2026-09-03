@@ -17,6 +17,7 @@ function menu() {
     console.log("1 - Cadastrar livro")
     console.log("2 - Excluir livro")
     console.log("3 - Listar livro")
+    console.log("4 - Atualizar livro")
     console.log("0 - Sair")
 
     const opcao = readline.questionInt("Digite a opção: ")
@@ -32,6 +33,10 @@ function menu() {
     } else if (opcao === 3) {
 
         listarLivro()
+    
+    } else if (opcao === 4) {
+
+        atualizarLivro()
 
     } else if (opcao === 0 ) {
 
@@ -43,6 +48,36 @@ function menu() {
         console.log("Opção inválida.")
         menu()
     }
+}
+
+function atualizarLivro() {
+
+    const titulo = readline.question("Digite o título do livro: ")
+    const autor = readline.question("Digite o autor do livro: ")
+
+    const id = readline.questionInt("Digite o ID do livro: ")
+
+    const update = "update livros set titulo = ?, autor = ? where id = ?"
+
+    conexao.query(update[titulo, autor, id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao atualizar livro.")
+            console.log(erro)
+
+        } else if (resultado.affectedRows === 0) {
+
+            console.log("Livro não encontrado")
+
+        } else {
+
+            console.log("Livro atualizado com sucesso")
+
+        }
+    })
+
+    menu()
 }
 
 function cadastrarLivro() {

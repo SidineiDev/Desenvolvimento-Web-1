@@ -53,7 +53,7 @@ function atualizarFilme() {
     const titulo = readline.question("Insira o título: ")
     const ano = readline.question("Insira o ano: ")
 
-    const id = readline.question("Digite o ID do aluno: ")
+    const id = readline.questionInt("Digite o ID do aluno: ")
     
     const update = "UPDATE filmes SET titulo = ? ano = ? WHERE id= ?"
 
@@ -129,7 +129,7 @@ function listarFilme() {
 
 function deletarFilme() {
 
-    const id = readline.question("insira o ID: ")
+    const id = readline.questionInt("insira o ID: ")
 
     const deletar = "delete from filmes where id = ?"
 

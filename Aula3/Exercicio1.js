@@ -142,7 +142,7 @@ function atualizarAluno() {
     const curso = readline.question("Digite o curso do aluno: ")
     const serie = readline.question("Digite a série do aluno: ")
 
-    const id = readline.question("Digite o ID do aluno: ")
+    const id = readline.questionInt("Digite o ID do aluno: ")
     
     const update = "UPDATE alunos SET nome = ?, email = ?, endereco = ?, matricula = ?, curso = ?, serie = ? WHERE id= ?"
 

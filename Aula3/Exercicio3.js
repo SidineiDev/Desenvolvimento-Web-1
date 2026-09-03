@@ -98,7 +98,7 @@ function listarLivro() {
 
 function deletarLivro() {
 
-    const id = readline.question("Digite o ID do livro: ")
+    const id = readline.questionInt("Digite o ID do livro: ")
 
     const deletar = "delete from livros where id = ?"
 
@@ -129,7 +129,7 @@ function atualizarLivro() {
     const titulo = readline.question("Digite o título do livro: ")
     const autor = readline.question("Digite o autor do livro: ")
 
-    const id = readline.question("Digite o ID do aluno: ")
+    const id = readline.questionInt("Digite o ID do aluno: ")
     
     const update = "UPDATE livros SET titulo = ?, autor = ?,  WHERE id= ?"
 

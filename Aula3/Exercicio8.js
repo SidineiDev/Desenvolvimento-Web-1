@@ -15,6 +15,7 @@ function menu() {
     console.log("1 - Cadastrar cursos")
     console.log("2 - Excluir cursos")
     console.log("3 - Listar cursos")
+    console.log("4 - Atualizar cursos")
     console.log("0 - Sair")
     
     const opcao = readline.questionInt("Digite a opção: ")
@@ -30,6 +31,10 @@ function menu() {
     } else if (opcao === 3) {
     
         listarCurso()
+
+    } else if (opcao === 4) {
+    
+        atualizarCurso()
     
     } else if (opcao === 0 ) {
     
@@ -41,6 +46,35 @@ function menu() {
         console.log("Opção inválida.")
         menu()
     }
+}
+
+function atualizarCurso() {
+
+    const nome = readline.question("Insira o nome: ")
+    const carga_horaria = readline.question("Insira a carga_horária: ")
+
+    const id = readline.questionInt("Digite o ID do curso: ")
+    
+    const update = "UPDATE funcionarios SET nome = ? carga_horaria = ? WHERE id= ?"
+
+    conexao.query(update, [nome, carga_horaria, id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao atualizar curso.")
+            console.log(erro)
+
+        } else if (resultado.affectedRows === 0) {
+
+            console.log("Curso não encontrado.")
+
+        }  else {
+
+            console.log("Curso atualizado com sucesso!")
+
+        }
+        conexao.end()
+    })
 }
 
 function cadastrarCurso() {
@@ -95,7 +129,7 @@ function listarCurso() {
 
 function deletarCurso() {
 
-    const id = readline.question("insira o ID: ")
+    const id = readline.questionInt("insira o ID: ")
 
     const deletar = "delete from cursos where id = ?"
 

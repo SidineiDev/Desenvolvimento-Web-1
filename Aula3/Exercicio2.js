@@ -54,7 +54,7 @@ function cadastrarProduto() {
 
     const nome = readline.question("Cadastrar nome do produto: ")
     const preco = readline.questionFloat("Cadastrar preço do produto: ")
-    const quantidade = readline.question("Cadastrar quantidade em estoque: ")
+    const quantidade = readline.questionInt("Cadastrar quantidade em estoque: ")
 
     const inserir = "insert into produtos (nome, preco, quantidade) values (?, ?, ?)"
 
@@ -103,7 +103,7 @@ function listarProduto() {
 
 function deletarProduto() {
 
-    const id = readline.question("Digite o ID do produto: ")
+    const id = readline.questionInt("Digite o ID do produto: ")
 
     const deletar = "delete from produtos where id = ?"
 
@@ -132,9 +132,9 @@ function atualizarProduto() {
 
     const nome = readline.question("Cadastrar nome do produto: ")
     const preco = readline.questionFloat("Cadastrar preço do produto: ")
-    const quantidade = readline.question("Cadastrar quantidade em estoque: ")
+    const quantidade = readline.questionInt("Cadastrar quantidade em estoque: ")
 
-    const id = readline.question("Digite o ID do aluno: ")
+    const id = readline.questionInt("Digite o ID do aluno: ")
     
     const update = "UPDATE alunos SET nome = ?, preco = ?, quantidade = ? WHERE id= ?"
 

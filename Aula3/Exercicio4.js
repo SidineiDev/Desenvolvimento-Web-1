@@ -101,7 +101,7 @@ function listarJogo() {
 
 function deletarJogo() {
 
-    const id = readline.question("Digite o ID: ")
+    const id = readline.questionInt("Digite o ID: ")
 
     const deletar = "delete from jogos where id = ?"
 
@@ -131,7 +131,7 @@ function atualizarJogo() {
     const nome = readline.question("Insira o nome do jogo: ")
     const genero = readline.question("Insira o gênero do jogo: ")
 
-    const id = readline.question("Digite o ID do aluno: ")
+    const id = readline.questionInt("Digite o ID do jogo: ")
     
     const update = "UPDATE jogos SET nome = ?, genero = ? WHERE id= ?"
 

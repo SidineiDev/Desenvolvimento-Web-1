@@ -15,6 +15,7 @@ function menu() {
     console.log("1 - Cadastrar usuários")
     console.log("2 - Excluir usuários")
     console.log("3 - Listar usuários")
+    console.log("4 - Atualizar usuários")
     console.log("0 - Sair")
     
     const opcao = readline.questionInt("Digite a opção: ")
@@ -30,6 +31,10 @@ function menu() {
     } else if (opcao === 3) {
     
         listarUsuarios()
+
+    } else if (opcao === 4) {
+
+        atualizarUsuario()
     
     } else if (opcao === 0 ) {
     
@@ -42,6 +47,36 @@ function menu() {
         menu()
     }
 }
+
+function atualizarUsuario() {
+
+    const nome = readline.question("Digite o nome do usuário: ")
+    const email = readline.question("Digite o email do usuário: ")
+
+    const id = readline.question("Digite o ID do usuário: ")
+
+    const update = "update usuarios set nome = ?, email = ? where id = ?"
+
+    conexao.query(update[nome, email, id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao atualizar usuário: ")
+            console.log(erro)
+
+        } else if (resultado.affectedRows === 0) {
+
+            console.log("Usuário não encontrado.")
+
+        }  else {
+
+            console.log("Usuário atualizado com sucesso!")
+        }
+    })
+    
+    menu()
+}
+
 
 function cadastrarUsuarios() {
 

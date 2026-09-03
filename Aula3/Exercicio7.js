@@ -15,6 +15,7 @@ function menu() {
     console.log("1 - Cadastrar funcionarios")
     console.log("2 - Excluir funcionarios")
     console.log("3 - Listar funcionarios")
+    console.log("4 - Atualizar funcionarios")
     console.log("0 - Sair")
     
     const opcao = readline.questionInt("Digite a opção: ")
@@ -31,6 +32,10 @@ function menu() {
     
         listarFuncionario()
     
+    } else if (opcao === 4) {
+    
+        atualizarFuncionario()
+    
     } else if (opcao === 0 ) {
     
         console.log("Programa encerrado.")
@@ -41,6 +46,35 @@ function menu() {
         console.log("Opção inválida.")
         menu()
     }
+}
+
+function atualizarFuncionario() {
+
+    const nome = readline.question("Insira o nome: ")
+    const cargo = readline.question("Insira o cargo: ")
+
+    const id = readline.questionInt("Digite o ID do funcionario: ")
+    
+    const update = "UPDATE funcionarios SET nome = ? cargo = ? WHERE id= ?"
+
+    conexao.query(update, [nome, cargo, id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao atualizar funcionário.")
+            console.log(erro)
+
+        } else if (resultado.affectedRows === 0) {
+
+            console.log("Funcionário não encontrado.")
+
+        }  else {
+
+            console.log("Funcionário atualizado com sucesso!")
+
+        }
+        conexao.end()
+    })
 }
 
 function cadastrarFuncionario() {
@@ -95,7 +129,7 @@ function listarFuncionario() {
 
 function deletarFuncionario() {
 
-    const id = readline.question("insira o ID: ")
+    const id = readline.questionInt("insira o ID: ")
     const resposta = readline.question("Deseja realmente excluir este funcionário? [S/N]: ").toLowerCase()
 
         if (resposta === "s") {

@@ -15,6 +15,7 @@ function menu() {
     console.log("1 - Cadastrar clientes")
     console.log("2 - Excluir clientes")
     console.log("3 - Listar clientes")
+    console.log("4 - Atualizar clientes")
     console.log("0 - Sair")
     
     const opcao = readline.questionInt("Digite a opção: ")
@@ -31,7 +32,7 @@ function menu() {
     
         listarCliente()
     
-    } else if (opcao === 3) {
+    } else if (opcao === 4) {
     
         atualizarCliente()
     
@@ -52,7 +53,7 @@ function atualizarCliente() {
     const nome = readline.question("Insira o nome: ")
     const telefone = readline.question("Insira o telefone: ")
   
-    const id = readline.question("Digite o ID do aluno: ")
+    const id = readline.questionInt("Digite o ID do cliente: ")
     
     const update = "UPDATE clientes SET nome = ?, telefone = ? WHERE id= ?"
 
@@ -128,7 +129,7 @@ function listarCliente() {
 
 function deletarCliente() {
 
-    const id = readline.question("insira o ID: ")
+    const id = readline.questionInt("insira o ID: ")
 
     const deletar = "delete from clientes where id = ?"
 
