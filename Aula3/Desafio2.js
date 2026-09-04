@@ -95,9 +95,11 @@ function cadastrarUsuarios() {
             }  else {
     
                 console.log("Usuário cadastrado com sucesso.")
-                menu()
+            
             }
+            menu()
         })
+    
 }
 
 function listarUsuarios() {

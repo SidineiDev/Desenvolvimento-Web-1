@@ -47,7 +47,6 @@ function menu() {
         menu()
 
     }
-
 }
 
 function atualizarEvento() {
@@ -57,7 +56,7 @@ function atualizarEvento() {
 
     const id = readline.question("Digite o nome do id: ")
 
-    const update = "update eventos set nome = ?, data_evento = ? whete id = ?"
+    const update = "update eventos set nome = ?, data_evento = ? where id = ?"
 
     conexao.query(update,[nome, data_evento, id], function(erro, resposta) {
 
@@ -72,7 +71,7 @@ function atualizarEvento() {
 
         } else {
 
-            console;log("Evento atualizado com sucesso")
+            console.log("Evento atualizado com sucesso")
 
         }
     })
@@ -98,13 +97,15 @@ function cadastrarEvento() {
             console.log("Evento cadastrado com sucesso.")
 
         }
+
+        menu()
     })
-    menu()
+    
 }
 
 function listarEvento() {
 
-    const sql = "select * from eventos"
+    const sql = "select * from eventos order by data_evento asc"
 
     conexao.query(sql, function(erro, eventos) {
 
@@ -117,14 +118,43 @@ function listarEvento() {
 
             console.log("\n --- EVENTOS ---")
             eventos.forEach(function(eventos) {
-                console.log(eventos.nome + " - " +
+                console.log(
+                    eventos.nome + " - " +
                     eventos.data_evento
                 )
             })
 
-        }
+            menu()
 
-        menu()
+        }
 
     })
 }
+
+function excluirEvento() {
+
+    const id = readline.question("Digite o ID do evento: ")
+
+    const deletar = "delete from eventos where id = ?"
+
+    conexao.query(deletar, [id], function(erro, resultado) {
+
+        if (erro) {
+
+            console.log("Erro ao deletar evento.")
+            console.log(erro)
+
+        }  else if (resultado.affectedRows === 0) {
+
+            console.log("Evento não encontrado.")
+
+        }  else {
+
+            console.log("Evento deletado com sucesso.")
+        }
+    })
+
+    menu()
+}
+
+menu()
