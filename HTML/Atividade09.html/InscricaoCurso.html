@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição de Curso</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="alert('Inscrição enviada com sucesso!')">
+
+        <h2>Inscrição Curso</h2>
+
+        <label for="">Insira seu nome de usuário:</label> <br>
+        <input type="text" name="login" placeholder="Insira seu nome" required> 
+        <br> <br>
+
+        <label for="">Insira seu e-mail:</label> <br>
+        <input type="email" name="email" placeholder="Insira seu e-mail" required>
+        <br> <br>
+
+        <label for="">Insira sua senha:</label> <br>
+        <input type="password" name="pwd" placeholder="Insira sua senha" required> 
+        <br> <br>
+
+        <label for="">Data de nascimento:   </label> <br>
+        <input type="date" name="nascimento">
+        <br> <br>
+
+        <label for="">Curso desejado:</label> <br>
+        <input type="radio" name="curso" id="desenvolvimento-sistema" value="desenvolvimento-sistema" required>
+        <label for="desenvolvimento-sistema">Desenvolvimento de Sistema</label> <br>
+        <input type="radio" name="curso" id="administracao" value="administracao" required>
+        <label for="administracao">Administração</label> <br>
+        <input type="radio" name="curso" id="ciencia-dados" value="ciencia-dados" required>
+        <label for="ciencia-dados">Ciência de Dados</label> <br>
+        <input type="radio" name="curso" id="recursos-humanos" value="recursos-humanos" required>
+        <label for="recursos-humanos">Recursos Humanos</label> 
+        <br> <br>
+
+        <label for="">Turno:</label> <br>
+        <input type="radio" name="turno" id="matutino" value="matutino" required>
+        <label for="matutino">Matutino</label> <br>
+        <input type="radio" name="turno" id="vespertino" value="vespertino" required>
+        <label for="vespertino">Vespertino</label> <br>
+        <input type="radio" name="turno" id="noturno" value="noturno" required>
+        <label for="noturno">Noturno</label> 
+        <br> <br>
+
+        <label for="">Nível de interesse no curso, de 0 a 10:</label> <br>
+        pouco interesse
+        <input type="range" min="0" max="10">
+        muito interesse <br> <br>
+
+        <label for="">Campo para enviar um documento:</label> <br>
+        <input type="file" multiple>
+        <br> <br>
+
+        <label for="">Campo para escrever por que deseja fazer o curso:</label>
+        <textarea name="" id="" placeholder="Digite aqui"></textarea>
+
+
+        <br> <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

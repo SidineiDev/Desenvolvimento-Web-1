@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meios de transporte</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="alert('Bem vindo ao sistema')">
+
+        <h2>Pesquisa - Meio de Transporte</h2>
+
+        <label for="">Insira seu nome:</label> <br>
+        <input type="text" name="nome" placeholder="Insira seu nome" required>
+        <br> <br>
+
+        <label for="">Data de nascimento</label> <br>
+        <input type="date" name="nascimento" required>
+        <br> <br>
+
+        <label for="">Meios de transporte utilizados:</label> <br>
+        <input type="checkbox" name="transporte" id="bicicleta" value="bicicleta" required>
+        <label for="bicicleta">Bicicleta</label> <br>
+        <input type="checkbox" name="transporte" id="carro" value="carro" required>
+        <label for="carro">Carro</label> <br>
+        <input type="checkbox" name="transporte" id="moto" value="moto" required>
+        <label for="moto">Moto</label> <br>
+        <input type="checkbox" name="transporte" id="onibus" value="onibus" required>
+        <label for="onibus">Ônibus</label> <br>
+        <input type="checkbox" name="transporte" id="app_transporte" value="app_transporte" required>
+        <label for="app_transporte">Aplicativo de Transporte</label> <br>
+        <input type="checkbox" name="transporte" id="caminhada" value="caminhada" required>
+        <label for="caminhada">Caminhada</label>
+        <br> <br>
+
+        <label for="">Quantidade de veículos que a pessoa possui:</label> <br>
+        <input type="number" max="5" min="0" required>
+        <br> <br>
+
+        <label for="">Nível de satisfação com o transporte público, de 0 a 10;</label> <br>
+        pouco satisfeito
+        <input type="range" min="0" max="10" step="1">
+        muito satisfeito
+        <br> <br>
+
+        <label for="">Comentário sobre o trânsito da cidade:</label> <br>
+        <textarea name="texto-area" id="" required></textarea> <br> <br>
+
+        <button >CLIQUE AQUI!</button>
+
+        <br> <br>
+        <input type="submit" onsubmit="alert('Obrigado por participar da pesquisa')">
+
+    </form>
+</body>
+</html>

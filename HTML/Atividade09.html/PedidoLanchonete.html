@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de uma Lanchonete</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="alert('Pedido registrado com sucesso!')">
+
+        <h2>Formulário de Pedido de uma Lanchonete</h2>
+
+        <label for="">Nome do cliente:</label> <br>
+        <input type="text" required>
+        <br> <br>
+
+        <label for="">E-mail:</label> <br>
+        <input type="email"> 
+        <br> <br>
+
+        <label for="">Tipo de pedido</label> <br>
+        <input type="radio" name="pedido" id="retirada" value="retirada" required>
+        <label for="retirada">Retirada</label> <br>
+
+        <input type="radio" name="pedido" id="entrega" value="entrega" required>
+        <label for="entrega">Entrega</label>
+        <br> <br>
+
+        <label for="">Produtos:</label> <br>
+        <input type="checkbox" name="produto" id="hamburguer" value="hamburguer">
+        <label for="hamburguer">Hambúrguer</label> <br>
+
+        <input type="checkbox" name="produto" id="cachorro-quente" value="cachorro-quente">
+        <label for="cachorro-quente">Cachorro-quente</label> <br>
+
+        <input type="checkbox" name="produto" id="pizza" value="pizza">
+        <label for="pizza">Pizza</label> <br>
+
+        <input type="checkbox" name="produto" id="batata_frita" value="batata_frita">
+        <label for="batata_frita">Batata frita</label> <br>
+
+        <input type="checkbox" name="produto" id="refrigerante" value="refrigerante">
+        <label for="refrigerante">Refrigerante</label> <br>
+
+        <input type="checkbox" name="produto" id="suco" value="suco">
+        <label for="suco">Suco</label>
+        <br> <br>
+
+        <label for="">Quantidade de itens, entre 1 e 15:</label> <br>
+        <input type="number" min="1" max="15">
+        <br> <br>
+
+        <label for="">Data e horário do pedido:</label> <br>
+        <input type="datetime-local">
+        <br> <br>
+
+        <label for="">Cor preferida para a embalagem:</label> <br>
+        <input type="color">
+        <br> <br>
+
+        <label for="">Observações sobre o pedido:</label> <br>
+        <textarea name="" id=""></textarea>
+        <br> <br>
+
+        <input type="submit">
+
+    </form>
+</body>
+</html>

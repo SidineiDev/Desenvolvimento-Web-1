@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição de Evento</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="alert('Inscrição no evento realizada com sucesso!')">
+
+        <h2>Sistema - Inscrição Evento</h2>
+
+        <label for="">Nome completo:</label> <br>
+        <input type="text" required>
+        <br> <br>
+
+        <label for="">E-mail:</label> <br>
+        <input type="email" required>
+        <br> <br>
+
+        <label for="">Senha para acompanhar a inscrição:</label> <br>
+        <input type="text" required>
+        <br> <br>
+
+        <label for="">Data de nascimento:</label> <br>
+        <input type="date"> 
+        <br> <br>
+
+        <label for="">Data e horário de chegada ao evento:</label> <br>
+        <input type="datetime-local"> 
+        <br> <br>
+
+        <label for="">Tipo de participação:</label> <br>
+        <input type="radio" name="participação" id="visitante" value="visitante">
+        <label for="visitante">Visitante</label> <br>
+
+        <input type="radio" name="participação" id="estudante" value="estudante">
+        <label for="estudante">Estudante</label> <br>
+
+        <input type="radio" name="participação" id="professor" value="professor">
+        <label for="professor">Professor</label> <br>
+
+        <input type="radio" name="participação" id="palestrante" value="palestrante">
+        <label for="palestrante">Palestrante</label> <br>
+
+        <input type="radio" name="participação" id="expositor" value="expositor">
+        <label for="expositor">Expositor</label> 
+        <br> <br>
+
+        <label for="">Áreas de interesse:</label> <br>
+        <input type="checkbox" name="interesse" id="programacao" value="programação">
+        <label for="programação">Programação</label> <br>
+
+        <input type="checkbox" name="interesse" id="robotica" value="robótica">
+        <label for="robótica">Robótica</label> <br>
+
+        <input type="checkbox" name="interesse" id="inteligencia_artificial" value="inteligencia_artificial">
+        <label for="inteligencia_artificial">Inteligência Artificial</label> <br>
+
+        <input type="checkbox" name="interesse" id="banco_de_dados" value="banco_de_dados">
+        <label for="banco_de_dados">Banco de Dados</label> <br>
+
+        <input type="checkbox" name="interesse" id="seguranca_digital" value="segurança_digital">
+        <label for="segurança_digital">Segurança Digital</label> <br>
+
+        <input type="checkbox" name="interesse" id="desenvolvimento_web" value="desenvolvimento_web">
+        <label for="desenvolvimento_web">Desenvolvimento_web</label> 
+        <br> <br>
+
+        <label for="">Quantidade de acompanhantes, entre 0 e 5:</label> <br>
+        <input type="number" min="0" max="5">
+        <br> <br>
+
+        <label for="">Nível de expectativa para o evento, de 0 a 10:</label> <br>
+        Pouca Expectativa 
+        <input type="range" min="0" max="10">
+        Muita Expectativa
+        <br> <br>
+
+        <label for="">Documento de identificação:</label> <br>
+        <input type="file" multiple>
+        <br> <br>
+
+        <textarea name="" id=""></textarea>
+        <br> <br>
+
+        <input type="checkbox" name="regras" id="regras" value="regras">
+        Li e concordo com as regras do evento.
+        <br> <br>
+
+        <input type="submit">
+
+    </form>
+</body>
+</html>

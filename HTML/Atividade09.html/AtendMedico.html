@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Médico</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="alert('Solicitação de agendamento enviada!')">
+
+        <h2>Agendamento para Atendimento Médico</h2>
+
+        <label for="">Insira seu nome de usuário:</label> <br>
+        <input type="text" name="login" placeholder="Insira seu nome" required> 
+        <br> <br>
+
+        <label for="">Insira seu e-mail:</label> <br>
+        <input type="email" name="email" placeholder="Insira seu e-mail" required>
+        <br> <br>
+
+        <label for="">Data de nascimento:   </label> <br>
+        <input type="date" name="nascimento">
+        <br> <br>
+
+        <label for="">Data e horário desejados para a consulta:</label> <br>
+        <input type="datetime-local" required>
+        <br> <br>
+
+        <label for="">Tipo de consulta:</label> <br>
+        <input type="radio" name="atendimento" id="rotina" value="rotina">
+        <label for="rotina">Rotina</label> <br>
+        <input type="radio" name="atendimento" id="retorno" value="retorno">
+        <label for="retorno">Retorno</label> <br>
+        <input type="radio" name="atendimento" id="exame" value="exame">
+        <label for="exame">Exame</label> <br>
+        <input type="radio" name="atendimento" id="prioritario" value="prioritario">
+        <label for="prioritario">Atendimento Prioritário</label>
+        <br> <br>
+
+        <label for="">Nível de dor ou desconforto, de 0 a 10:</label> <br>
+        pouca dor
+        <input type="range" min="0" max="10">
+        muita dor
+        <br> <br>
+
+        <label for="">Descrição dos sintomas:</label> <br>
+        <textarea name="" id="" required></textarea>
+        <br> <br>
+
+        <label for="">Banco para anexar exames</label> <br>
+        <input type="file" name="exames" id="exames" multiple>
+
+        <br> <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

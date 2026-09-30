@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Escolar</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="alert('Atividade enviada com sucesso!')">
+
+        <h2>Entrega - Atividade Escolar</h2>
+
+        <label for="">Nome do estudante:</label> <br>
+        <input type="text" required>
+        <br> <br>
+
+        <label for="">E-mail</label> <br>
+        <input type="email" required>
+        <br> <br>
+
+        <label for="">Data de entrega:</label> <br>
+        <input type="date">
+        <br> <br>
+
+        <label for="">Disciplina:</label> <br>   
+        <input type="radio" name="disciplina" id="banco_de_dados" value="banco_de_dados">
+        <label for="banco_de_dados">Banco de Dados</label> <br>
+
+        <input type="radio" name="disciplina" id="programacao" value="programacao">
+        <label for="programacao">Programação</label> <br>
+
+        <input type="radio" name="disciplina" id="desenvolvimento-web" value="desenvolvimento-web">
+        <label for="desenvolvimento-web">Desenvolvimento Web</label> <br>
+
+        <input type="radio" name="disciplina" id="analise_de_dados" value="analise_de_dados">
+        <label for="analise_de_dados">Análise de Dados</label>
+        <br> <br>
+
+        <label for="">Tipo de Atividade:</label> <br>
+        <input type="radio" name="atividade" id="individual" value="individual">
+        <label for="individual">Trabalho Individual</label> <br>
+
+        <input type="radio" name="atividade" id="equipe" value="equipe">
+        <label for="equipe">Trabalho em Equipe</label> <br>
+
+        <input type="radio" name="atividade" id="recuperacao" value="recuperacao">
+        <label for="recuperacao">Recuperação</label> <br>
+
+        <input type="radio" name="atividade" id="projeto" value="projeto">
+        <label for="projeto">Projeto</label>
+        <br> <br>
+
+        <label for="">Arquivos da atividade:</label> <br>
+        <input type="file" multiple required>
+        <br> <br>
+
+        <label for="">Nível de dificuldade da atividade, de 0 a 10:</label> <br>
+        Pouco Difícil
+        <input type="range" min="0" max="10">
+        Muito Difícil
+        <br> <br>
+
+       <label for="">Comentário para o professor:</label> <br>
+       <textarea name="" id=""></textarea>
+
+        <br> <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

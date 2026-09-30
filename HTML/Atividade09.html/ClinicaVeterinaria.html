@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinária</title>
+</head>
+<body>
+    <form action="" method="post">
+
+        <h2>Cadastro de Animal</h2>
+
+        <label for="">Nome do responsável:</label> <br>
+        <input type="text" required>
+        <br> <br>
+
+        <label for="">E-mail:</label> <br>
+        <input type="email">
+        <br> <br>
+
+        <label for="">Nome do animal:</label> <br>
+        <input type="text" required>
+        <br> <br>
+
+        <label for="">Data de nascimento do animal:</label> <br>
+        <input type="date">
+        <br> <br>
+
+        <label for="">Tipo de animal:</label> <br>
+        <input type="radio" name="animal" id="cachorro" value="cachorro" required> 
+        <label for="cachorro">Cachorro</label> <br>
+        
+        <input type="radio" name="animal" id="gato" value="gato" required>
+        <label for="gato">Gato</label> <br>
+
+        <input type="radio" name="animal" id="ave" value="ave" required>
+        <label for="ave">Ave</label> <br>
+
+        <input type="radio" name="animal" id="coelho" value="coelho" required>
+        <label for="coelho">Coelho</label> <br>
+
+        <input type="radio" name="animal" id="outro" value="outro" required>
+        <label for="outro">Outro</label> <br> <br>
+
+        <label for="">Sexo do animal</label> <br>
+        <input type="radio" name="sexo" id="femea" value="femea"> 
+        <label for="femea">Fêmea</label> <br>
+
+        <input type="radio" name="sexo" id="macho" value="macho">
+        <label for="macho">Macho</label> <br>
+
+        <input type="radio" name="sexo" id="nao_identificado" value="nao-identificado">
+        <label for="nao-identificado">Não Identificado</label>
+        <br> <br>
+
+        <label for="">Quantidade de animais que o responsável possui, entre 1 e 10:</label> <br>
+        <input type="number" min="1" max="10">
+        <br> <br>
+
+        <label for="">Cor predominante do animal:</label> <br>
+        <input type="color">
+        <br> <br>
+
+        <label for="">Foto do animal:</label> <br>
+        <input type="image" width="48" height="48" multiple>
+        <br> <br>
+
+        <label for="">Descrição sobre o comportamento e estado de saúde:</label>
+        <textarea name="" id=""></textarea>
+        <br> <br>
+
+        <input type="submit">
+
+    </form>
+</body>
+</html>
